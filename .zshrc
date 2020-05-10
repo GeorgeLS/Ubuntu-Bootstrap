@@ -116,4 +116,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-ls='exa -l -F --group-directories-first --time-style=iso --git --color=always'
+alias ls='exa -l -F --group-directories-first --time-style=iso --git --color=always'
