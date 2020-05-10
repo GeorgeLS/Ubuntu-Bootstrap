@@ -53,6 +53,9 @@ fi
 echo "Installing Make"
 apt_install make
 
+echo "Installing CMake"
+apt_install cmake
+
 echo "Installing vim"
 apt_install vim
 
