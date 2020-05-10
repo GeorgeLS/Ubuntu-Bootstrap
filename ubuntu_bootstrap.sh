@@ -90,6 +90,9 @@ apt_intall gimp
 echo "Installing Spotify"
 snap_install spotify
 
+echo "Installing Okular"
+snap_install okular
+
 echo "=============================== SETUP PHASE ==============================="
 
 echo "Setting up alacritty"
