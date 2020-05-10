@@ -87,6 +87,9 @@ snap_install vlc
 echo "Installing gimp"
 apt_intall gimp
 
+echo "Installing Spotify"
+snap_install spotify
+
 echo "=============================== SETUP PHASE ==============================="
 
 echo "Setting up alacritty"
