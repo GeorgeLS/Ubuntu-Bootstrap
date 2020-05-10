@@ -34,6 +34,19 @@ apt_install default-jdk
 echo "Installing Rust compiler and toolchain"
 if [ ! -d "$HOME/.cargo" ]; then
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh # Rust compiler and toolchain
+
+    echo "Installing exa"
+	$HOME/.cargo/bin/cargo install exa
+
+    echo "Installing ripgrep"
+	$HOME/.cargo/bin/cargo install ripgrep
+
+    echo "Installing alacritty"
+	sudo add-apt-repository ppa:mmstick76/alacritty
+	apt_install alacritty
+
+    echo "Installing RLS"
+    $HOME/.cargo/rustup component add rls
 fi
 
 # Essentials
@@ -42,28 +55,6 @@ apt_install vim
 
 echo "Installing git"
 apt_install git
-
-echo "Installing exa"
-if hash exa 2>/dev/null; then
-	echo "Exa is already installed"
-else
-	$HOME/.cargo/bin/cargo install exa
-fi
-
-echo "Installing ripgrep"
-if hash rg 2>/dev/null; then
-	echo "ripgrep is already installed"
-else
-	$HOME/.cargo/bin/cargo install ripgrep
-fi
-
-echo "Installing alacritty"
-if hash alacritty 2>/dev/null; then
-	echo "Alacritty is already installed"
-else
-	sudo add-apt-repository ppa:mmstick76/alacritty
-	apt_install alacritty
-fi
 
 echo "Installing VS Code"
 if hash code 2>/dev/null; then
