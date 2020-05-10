@@ -50,6 +50,9 @@ if [ ! -d "$HOME/.cargo" ]; then
 fi
 
 # Essentials
+echo "Installing Make"
+apt_install make
+
 echo "Installing vim"
 apt_install vim
 
