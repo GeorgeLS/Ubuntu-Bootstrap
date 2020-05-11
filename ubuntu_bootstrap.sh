@@ -33,17 +33,17 @@ apt_install default-jdk
 
 echo "Installing Rust compiler and toolchain"
 if [ ! -d "$HOME/.cargo" ]; then
-	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh # Rust compiler and toolchain
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh # Rust compiler and toolchain
 
     echo "Installing exa"
-	$HOME/.cargo/bin/cargo install exa
+    $HOME/.cargo/bin/cargo install exa
 
     echo "Installing ripgrep"
-	$HOME/.cargo/bin/cargo install ripgrep
+    $HOME/.cargo/bin/cargo install ripgrep
 
     echo "Installing alacritty"
-	sudo add-apt-repository ppa:mmstick76/alacritty
-	apt_install alacritty
+    sudo add-apt-repository ppa:mmstick76/alacritty
+    apt_install alacritty
 
     echo "Installing RLS"
     $HOME/.cargo/rustup component add rls
@@ -98,8 +98,7 @@ echo "=============================== SETUP PHASE ==============================
 echo "Setting up alacritty"
 mkdir -p $HOME/.config/alacritty
 wget https://raw.githubusercontent.com/aaron-williamson/base16-alacritty/master/colors/base16-atelier-dune.yml
-cat base16-atelier-dune.yml > $HOME/.config/alacritty/alacritty.yml
-rm base16-atelier-dune.yml
+mv base16-atelier-dune.yml $HOME/.config/alacritty/alacritty.yml
 
 echo "Setting up zsh"
 chsh gliontos /usr/bin/zsh
